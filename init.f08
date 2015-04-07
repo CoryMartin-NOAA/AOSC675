@@ -16,4 +16,5 @@
 module init
   use netcdf
   implicit none
-  
+
+end module

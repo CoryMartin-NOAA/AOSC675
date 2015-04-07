@@ -17,4 +17,5 @@
 module insol
   use init
   implicit none
-  int :: SolConst = 1370 ! w/m^2
+  integer :: SolConst = 1370 ! w/m^2
+end module
