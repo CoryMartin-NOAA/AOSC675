@@ -2,22 +2,19 @@
 ! AOSC 675 Final Project
 !--------------------------------------------------------------------
 !
-! PROGRAM: Driver
+! module: insol
 !
 !> @author
-!> Doyeon Ahn, Cory Martin & Sandra Roberts
+!> Cory Martin
 !
 ! DESCRIPTION:
-!> Driver for simple plant photosynthesis and soil respiration model.
+!> calculates incoming solar radation based off of timestep
+!> assumes step of one hour and that model starts at 00Z Jan 1
 !
 ! REVISION HISTORY:
 ! Apr 2015 - Initial Version
 !--------------------------------------------------------------------
-program driver
+module insol
   use init
-  use insol
-
-implicit none
-
-print *,"Hello World"
-end program
+  implicit none
+  int :: SolConst = 1370 ! w/m^2

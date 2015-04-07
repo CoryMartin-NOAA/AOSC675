@@ -2,22 +2,18 @@
 ! AOSC 675 Final Project
 !--------------------------------------------------------------------
 !
-! PROGRAM: Driver
+! module: init
 !
 !> @author
 !> Doyeon Ahn, Cory Martin & Sandra Roberts
 !
 ! DESCRIPTION:
-!> Driver for simple plant photosynthesis and soil respiration model.
+!> Model initialization module
 !
 ! REVISION HISTORY:
 ! Apr 2015 - Initial Version
 !--------------------------------------------------------------------
-program driver
-  use init
-  use insol
-
-implicit none
-
-print *,"Hello World"
-end program
+module init
+  use netcdf
+  implicit none
+  
