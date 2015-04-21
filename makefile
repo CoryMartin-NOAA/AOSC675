@@ -12,12 +12,10 @@ clean:
 	rm -f *.o *.mod model.exe
 
 #dependencies
-model.exe: init.o driver.o insol.o
+model.exe: driver.o insol.o temp.o
 	$(FC)  -o $@ $^ $(FLIBS)
 
-driver.o: init.o insol.o
-
-insol.o: init.o
+driver.o: insol.o temp.o
 
 
 #compile rules

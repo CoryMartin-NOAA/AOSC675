@@ -15,7 +15,6 @@
 ! Apr 2015 - Initial Version
 !--------------------------------------------------------------------
 module insol
-  use init
   implicit none
   ! remove below line later
   real :: lat = 39
@@ -25,11 +24,6 @@ module insol
   real :: F_solar ! incoming solar flux
   real :: pi
 
-  ! for this model, insolation will depend on three factors:
-  ! Earth's orbit --> closest in January, furthest in July
-  ! Earth's tilt --> depends on season and latitude
-  ! Earth's rotation --> Diurnal cycle, should also depend on latitude
-  !S_orbit = cos(coeff_orbit*t) + SolConst
 contains
   subroutine calc_insol(t,S_total)
     implicit none
