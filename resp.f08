@@ -2,19 +2,18 @@
 ! AOSC 675 Final Project
 !--------------------------------------------------------------------
 !
-! module: init
+! module: resp
 !
-!> @author
-!> Doyeon Ahn, Cory Martin & Sandra Roberts
+!> @authors
+!> Cory Martin
 !
 ! DESCRIPTION:
-!> Model initialization module
+!> Module for calculating Respiration
 !
 ! REVISION HISTORY:
-! Apr 2015 - Initial Version
+! May 2015 - Initial Version
 !--------------------------------------------------------------------
-module init
-  use netcdf
+module resp
   implicit none
-
+contains
 end module
