@@ -23,18 +23,19 @@ implicit none
 integer :: t
 real :: S_total, Tsurf
 integer :: numyears = 10 ! number of years to run model
+real :: mon_precip = 10 ! monthly precipitation in centimeters
 
-open (unit=99,file="results.txt",action="write",status="replace")
+open (unit=99,file="model_output.txt",action="write",status="replace")
 
 Tsurf = 255   ! assume start temperature of 255K
 
 print *,"Running Model Now..."
 do t=1,8760*numyears ! number of hours, 2 years test
-  print *,t
-  call calc_insol(t,S_total)
-  call calc_temp(Tsurf,S_total,Tsurf)
-  print *,S_total, Tsurf
-  write (99,*) t, S_total, Tsurf
+  print *,t ! print timestep
+  call calc_insol(t,S_total) ! calculate insolation
+  call calc_temp(Tsurf,S_total,Tsurf) ! calculate surface temperature
+  print *,S_total, Tsurf  ! print to screen, for testing purposes
+  write (99,*) t, S_total, Tsurf  ! write variables to file
 enddo
 print *,"Model Finished!"
 
