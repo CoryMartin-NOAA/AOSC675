@@ -22,16 +22,12 @@ program driver
 implicit none
 
 integer :: t
-real :: S_total, Tsurf
-integer :: numyears = 10 ! number of years to run model
-real :: mon_precip = 10 ! monthly precipitation in centimeters
+real :: S_total
 
 print *,"Now reading parameters from ./namelist..."
 call read_nml() ! read namelist
 
 open (unit=98,file="model_output.txt",action="write",status="replace")
-
-Tsurf = 255   ! assume start temperature of 255K
 
 print *,"Running Model Now..."
 do t=1,8760*numyears ! number of hours, 2 years test

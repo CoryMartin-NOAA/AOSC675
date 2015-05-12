@@ -17,9 +17,7 @@
 module insol
   use input
   implicit none
-  ! remove below line later
-  real :: lat = 39
-  integer :: SolConst = 1370 ! w/m^2 average solar constant
+
   integer :: len_day = 24 ! assumes 24 timesteps (each is one hour in this model)
   integer :: len_year = 8760 ! assumes 8760 hours/timesteps in a year
   real :: F_solar ! incoming solar flux

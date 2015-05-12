@@ -15,25 +15,17 @@
 !--------------------------------------------------------------------
 module input
 
-  !!!!!!! DEFINE EXPLICITLY INPUT VARIABLES/PARAMS HERE !!!!!!
+  real :: lat, SolConst
+  integer :: numyears
+  real :: mon_precip, Tsurf, CapHeat
 
 contains
   subroutine read_nml()
     ! Read in parameters from a namelist (./namelist)
     implicit none
-    !namelist /domain/ dx,dy,dz,x1,x2,y1,y2,z1,z2
-    !namelist /time/ dt,t1,t2
-    !namelist /io/ outfile,outint
-    !namelist /phys/ d,difz
+    namelist /params/ lat, SolConst, numyears, mon_precip, Tsurf, CapHeat
     open(99, file='namelist')	! open './namelist'
-    !read(99, nml=domain)
-    !rewind(99)
-    !read(99, nml=time)
-    !rewind(99)
-    !read(99, nml=io)
-    !rewind(99)
-    !read(99, nml=phys)
-    !rewind(99)
+    read(99, nml=params)
     close(99)
     end subroutine
 end module
