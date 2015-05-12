@@ -14,6 +14,7 @@
 ! May 2015 - Initial Version
 !--------------------------------------------------------------------
 module resp
+  use input
   implicit none
 contains
 end module

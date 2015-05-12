@@ -15,6 +15,7 @@
 ! Apr 2015 - Initial Version
 !--------------------------------------------------------------------
 module insol
+  use input
   implicit none
   ! remove below line later
   real :: lat = 39

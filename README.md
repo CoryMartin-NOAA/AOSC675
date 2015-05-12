@@ -12,3 +12,5 @@ temp.f08 - Surface Temperature Module
 photo.f08 - Photosynthesis Module
 
 resp.f08 - Respiration Module
+
+input.f08 - Namelist input Module

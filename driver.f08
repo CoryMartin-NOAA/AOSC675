@@ -18,6 +18,7 @@ program driver
   use temp
   use resp
   use photo
+  use input
 implicit none
 
 integer :: t
@@ -25,7 +26,10 @@ real :: S_total, Tsurf
 integer :: numyears = 10 ! number of years to run model
 real :: mon_precip = 10 ! monthly precipitation in centimeters
 
-open (unit=99,file="model_output.txt",action="write",status="replace")
+print *,"Now reading parameters from ./namelist..."
+call read_nml() ! read namelist
+
+open (unit=98,file="model_output.txt",action="write",status="replace")
 
 Tsurf = 255   ! assume start temperature of 255K
 
@@ -35,7 +39,7 @@ do t=1,8760*numyears ! number of hours, 2 years test
   call calc_insol(t,S_total) ! calculate insolation
   call calc_temp(Tsurf,S_total,Tsurf) ! calculate surface temperature
   print *,S_total, Tsurf  ! print to screen, for testing purposes
-  write (99,*) t, S_total, Tsurf  ! write variables to file
+  write (98,*) t, S_total, Tsurf  ! write variables to file
 enddo
 print *,"Model Finished!"
 

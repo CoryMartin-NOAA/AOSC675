@@ -14,6 +14,7 @@
 ! Apr 2015 - Initial Version
 !--------------------------------------------------------------------
 module temp
+  use input
   implicit none
   real, parameter :: CapHeat = 4187000. ! Heat capacity of the Earth's surface (JK^-1m^-2) (assuming water)
   real :: sigma = 5.670E-8      ! Stefan-Boltzmann Constant (Wm^-2K^-4)
