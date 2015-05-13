@@ -17,7 +17,7 @@ module photo
   use input
   implicit none
 contains
-subroutine calc_photo(S_total, GPP)
+subroutine calc_photo(S_total, GPP) !Probably to include information from user input as well...
   implicit none
   real, intent(in) :: S_total
   real, intent(out) :: GPP
