@@ -46,6 +46,10 @@ contains
 
   maint_coef = maint_coef_in*(1+0.16*(T-273))
 
+  IF (maint_coef < 0. ) THEN
+    maint_coef = 0
+  END IF
+
   Ra = maint_coef*dry_weight + grow_coef*GPP
 
   return
