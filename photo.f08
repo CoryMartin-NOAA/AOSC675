@@ -27,12 +27,17 @@ subroutine calc_photo(S_total,T_surf,GPP) !Probably to include information from 
   real :: act_rad = 0.48
   real :: photo_e, NDVI,absorb_e !we have to let the user choose and do an if type statement to determine photo_e and NDIV
 
-!  photo_e = ??
   NDVI = (S_total*.00044) - 0.075
+
+  !!!! calculate photo_e
   IF ( T_surf <= 273.) THEN
     photo_e = 0
   ELSE
-    photo_e = .093 * (T_surf/315.)
+    IF ( S_total <= 350.) THEN
+      photo_e = .065
+    ELSE
+      photo_e = .000062*S_total - 0.0365 ! linear relationship y=mx+b
+    END IF
   END IF
 
   absorb_e = amax*(a+b*NDVI)
