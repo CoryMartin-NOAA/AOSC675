@@ -25,16 +25,19 @@ contains
   real :: maint_coef_in, maint_coef, dry_weight !we have to let the user choose and do an if type statement to determine these variables
 
   IF (veg_type == 1) THEN
-      ! coefficient values for X vegetation type
+      ! coefficient values for Grassland vegetation type
 !      maint_coef =
-!      dry_weight =
+    dry_weight = 900 ! gC/m^2
 !      maint_coef_in =
   ELSE IF (veg_type == 2 ) THEN
-    ! coefficient values for X vegetation type
+    ! coefficient values for Temperate Evergreen Seasonal/Broadleaf vegetation type
+    dry_weight = 9900 ! gC/m^2
   ELSE IF (veg_type == 3 ) THEN
-    ! coefficient values for X vegetation type
+    ! coefficient values for Evergreen Needle Leaf vegetation type
+    dry_weight = 13500 ! gC/m^2
   ElSE IF (veg_type == 4 ) THEN
-    ! coefficient values for X vegetation type
+    ! coefficient values for Tropical Rainforest vegetation type
+    dry_weight = 20250 ! gC/m^2
   ELSE
      ! do nothing?
   END IF
