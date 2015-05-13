@@ -26,6 +26,7 @@ subroutine calc_photo(S_total,T_surf,GPP) !Probably to include information from 
   real :: b = 1.25
   real :: act_rad = 0.48
   real :: photo_e, NDVI,absorb_e !we have to let the user choose and do an if type statement to determine photo_e and NDIV
+  real :: watt2photon = 4.57 ! multiply watts by this number to get micromoles per second of photons
 
   NDVI = (S_total*.00044) - 0.075
 
@@ -36,7 +37,7 @@ subroutine calc_photo(S_total,T_surf,GPP) !Probably to include information from 
     IF ( S_total <= 350.) THEN
       photo_e = .065
     ELSE
-      photo_e = .000062*S_total - 0.0365 ! linear relationship y=mx+b
+      photo_e = -.000062*S_total + 0.087 ! linear relationship y=mx+b
     END IF
   END IF
 
@@ -44,7 +45,7 @@ subroutine calc_photo(S_total,T_surf,GPP) !Probably to include information from 
   photo_e = photo_e * (mon_precip/15.8)
 
   absorb_e = amax*(a+b*NDVI)
-  GPP = photo_e*absorb_e*act_rad*S_total
+  GPP = photo_e*absorb_e*act_rad*S_total*(12e6)
 
   return
 end subroutine
