@@ -18,12 +18,13 @@ module input
   real :: lat, SolConst
   integer :: numyears
   real :: mon_precip, Tsurf, CapHeat
+  integer :: veg_type
 
 contains
   subroutine read_nml()
     ! Read in parameters from a namelist (./namelist)
     implicit none
-    namelist /params/ lat, SolConst, numyears, mon_precip, Tsurf, CapHeat
+    namelist /params/ lat, SolConst, numyears, mon_precip, Tsurf, CapHeat, veg_type
     open(99, file='namelist')	! open './namelist'
     read(99, nml=params)
     close(99)

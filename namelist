@@ -5,4 +5,5 @@
  mon_precip = 10 ! average monthly precip in centimeters
  Tsurf = 255 ! initial surface temp at model init
  CapHeat = 4187000. ! Heat capacity of the Earth's surface (JK^-1m^-2)
+ veg_type = 1 ! vegetation type integer, see README for values
 /
