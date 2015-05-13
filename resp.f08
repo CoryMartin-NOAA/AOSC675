@@ -22,7 +22,7 @@ contains
   real, intent(in) :: GPP,T
   real, intent(out) :: Ra
   real :: grow_coef = 0.14
-  real :: maint_coef_in, maint_coef, dry_weight !we have to let the user choose and do an if type statement to determine photo_e and NDIV
+  real :: maint_coef_in, maint_coef, dry_weight !we have to let the user choose and do an if type statement to determine these variables
   
   dry_weight = ?? !Plant dependent, user input
   maint_coef_in = ?? !Plant dependent, user input
