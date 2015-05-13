@@ -25,14 +25,15 @@ subroutine calc_photo(S_total, GPP) !Probably to include information from user i
   real :: a = -0.025
   real :: b = 1.25
   real :: act_rad = 0.48
-  real :: photo_e, NDIV,absorb_e !we have to let the user choose and do an if type statement to determine photo_e and NDIV
-  
-  photo_e = ??
-  NDIV = ??
-  
-  absorb_e = amax*(a+b*NDIV)
+  real :: photo_e, NDVI,absorb_e !we have to let the user choose and do an if type statement to determine photo_e and NDIV
+
+!  photo_e = ??
+!  NDIV = ??
+  NDVI = (S_total*.00044) - 0.075
+
+  absorb_e = amax*(a+b*NDVI)
   GPP = photo_e*absorb_e*act_rad*S_total
-  
+
   return
 end subroutine
 
