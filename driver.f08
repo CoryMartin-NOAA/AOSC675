@@ -22,7 +22,7 @@ program driver
 implicit none
 
 integer :: t
-real :: S_total
+real :: S_total, GPP,Ra,NPP
 
 print *,"Now reading parameters from ./namelist..."
 call read_nml() ! read namelist
@@ -34,8 +34,11 @@ do t=1,8760*numyears ! number of hours, 2 years test
   print *,t ! print timestep
   call calc_insol(t,S_total) ! calculate insolation
   call calc_temp(Tsurf,S_total,Tsurf) ! calculate surface temperature
-  print *,S_total, Tsurf  ! print to screen, for testing purposes
-  write (98,*) t, S_total, Tsurf  ! write variables to file
+  call calc_photo(S_total,Tsurf,GPP)
+  call calc_resp(GPP,Tsurf,Ra) ! calculate respiration
+  NPP = GPP-Ra
+  print *,S_total, Tsurf, GPP, Ra, NPP  ! print to screen, for testing purposes
+  write (98,*) t, S_total, Tsurf, GPP, Ra, NPP ! write variables to file
 enddo
 print *,"Model Finished!"
 
