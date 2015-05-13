@@ -32,5 +32,8 @@ subroutine calc_photo(S_total, GPP) !Probably to include information from user i
   
   absorb_e = amax*(a+b*NDIV)
   GPP = photo_e*absorb_e*act_rad*S_total
+  
+  return
+end subroutine
 
 end module
