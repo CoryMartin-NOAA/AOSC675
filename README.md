@@ -18,14 +18,14 @@ input.f08 - Namelist input Module
 
 
 Namelist parameters:
-lat = 39 ! latitude of point of interest
-SolConst = 1370 ! w/m^2 - solar constant
-numyears = 2 ! number of years to run model
-mon_precip = 10 ! average monthly precip in centimeters
-Tsurf = 255 ! initial surface temp at model init
-CapHeat = 4187000. ! Heat capacity of the Earth's surface (JK^-1m^-2)
-veg_type = 1 ! vegetation type integer, see README for values
-  1 - Grassland
-  2 - Temperate Evergreen Seasonal/Broadleaf
-  3 - Evergreen Needle Leaf
-  4 - Tropical Rainforest
+lat = 39 ! latitude of point of interest\n
+SolConst = 1370 ! w/m^2 - solar constant\n
+numyears = 2 ! number of years to run model\n
+mon_precip = 10 ! average monthly precip in centimeters\n
+Tsurf = 255 ! initial surface temp at model init\n
+CapHeat = 4187000. ! Heat capacity of the Earth's surface (JK^-1m^-2)\n
+veg_type = 1 ! vegetation type integer, see README for values\n
+  1 - Grassland\n
+  2 - Temperate Evergreen Seasonal/Broadleaf\n
+  3 - Evergreen Needle Leaf\n
+  4 - Tropical Rainforest\n
