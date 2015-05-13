@@ -34,4 +34,8 @@ plt.figure()
 plt.plot(NPP)
 plt.title('NPP')
 
+print('GPP: '+str(np.sum(GPP)))
+print('Rh: '+str(np.sum(Rh)))
+print('NPP: '+str(np.sum(NPP)))
+
 plt.show()

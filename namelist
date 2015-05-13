@@ -1,7 +1,7 @@
 &params
- lat = 3 ! latitude of point of interest
+ lat = 39 ! latitude of point of interest
  SolConst = 1370 ! w/m^2 - solar constant
- numyears = 2 ! number of years to run model
+ numyears = 1 ! number of years to run model
  mon_precip = 10 ! average monthly precip in centimeters
  Tsurf = 255 ! initial surface temp at model init
  CapHeat = 4187000. ! Heat capacity of the Earth's surface (JK^-1m^-2)
