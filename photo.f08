@@ -40,6 +40,9 @@ subroutine calc_photo(S_total,T_surf,GPP) !Probably to include information from 
     END IF
   END IF
 
+  !!! factor in rainfall/soil moisture
+  photo_e = photo_e * (mon_precip/15.8)
+
   absorb_e = amax*(a+b*NDVI)
   GPP = photo_e*absorb_e*act_rad*S_total
 
